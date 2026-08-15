@@ -1,1 +1,8 @@
 .venv
+models
+scripts/chira_dataset_generator/dataset.jsonl
+scripts/chira_dataset_generator/dataset_pilot.jsonl
+scripts/chira_dataset_generator/dataset_rejects.jsonl
+scripts/logs/agent_client_debug.log
+unsloth_compiled_cache
+memory

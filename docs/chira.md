@@ -44,9 +44,10 @@ numbers.
   is expected to be comparable; the main gap is reasoning depth, which
   this narrow narrative-generation task doesn't stress much; (2) fits
   edge deployment target (Raspberry Pi 5, see below) far better than 8B.
-  Fallback candidate: `unsloth/Qwen3-8B-unsloth-bnb-4bit`, only if 4B
-  eval quality (Indonesian narrative coherence, clinical phrasing) turns
-  out insufficient after spot-check.
+  > ~~Fallback candidate: `unsloth/Qwen3-8B-unsloth-bnb-4bit`~~
+  > **DEPRECATED — tidak dipakai.** 8B hanya disimpan sebagai catatan
+  > historis mengapa 4B dipilih. Jika nanti diperlukan, download manual
+  > via `huggingface-cli` (bukan via script otomatis).
 - **Method**: QLoRA, 4-bit quantization
 - **Framework**: Unsloth
 - **Epochs**: 1–3 (LLM fine-tuning overfits fast on small instruction
@@ -110,9 +111,10 @@ numbers.
 ## Status
 - [x] Concept + target format decided
 - [x] Model + method decided (Qwen3-4B-Instruct, unsloth bnb-4bit, QLoRA,
-      Unsloth — 8B kept as fallback if eval quality insufficient)
+      Unsloth — 8B ditandai deprecated, tidak dipakai)
 - [x] Edge deployment target decided (Raspberry Pi 5, GGUF Q4_K_M export)
-- [ ] Base model downloaded (`unsloth/Qwen3-4B-unsloth-bnb-4bit`)
+- [x] Base model downloaded (manual via `huggingface-cli` / `hf download`,
+      bukan via scripts/download_model.py)
 - [ ] Synthetic dataset generator (scenario randomizer + WHO Z-score
       calculator + prompt templates)
 - [ ] Dataset generation run (via local Qwen3.6-35B-A3B agent)
